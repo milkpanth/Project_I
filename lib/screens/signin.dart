@@ -18,7 +18,7 @@ class _SignInState extends State<SignIn> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               MyStyle().setLogo(),
-              showName(),
+              MyStyle().showName('GastoGo'),
             ],
           ),
         ));

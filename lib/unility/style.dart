@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyStyle {
-  Text showName() => Text('GastoGo');
+  Text showName(String title) => Text(title);
 
   Container setLogo() {
     return Container(

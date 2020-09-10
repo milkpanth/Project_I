@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/screens/signin.dart';
+import 'package:gastogo/screens/signup.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -28,6 +30,12 @@ class _HomeState extends State<Home> {
     return ListTile(
       leading: Icon(Icons.android),
       title: Text('Sign in'),
+      onTap: () {
+        Navigator.pop(context);
+        MaterialPageRoute route =
+            MaterialPageRoute(builder: (value) => SignIn());
+        Navigator.push(context, route);
+      },
     );
   }
 
@@ -35,6 +43,12 @@ class _HomeState extends State<Home> {
     return ListTile(
       leading: Icon(Icons.android),
       title: Text('Sign Up'),
+      onTap: () {
+        Navigator.pop(context);
+        MaterialPageRoute route =
+            MaterialPageRoute(builder: (value) => SignUp());
+        Navigator.push(context, route);
+      },
     );
   }
 

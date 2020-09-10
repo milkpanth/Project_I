@@ -15,8 +15,15 @@ class _SignInState extends State<SignIn> {
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[],
+            children: <Widget>[setLogo()],
           ),
         ));
+  }
+
+  Container setLogo() {
+    return Container(
+      width: 120.0,
+      child: Image.asset('images/logo.jpg'),
+    );
   }
 }

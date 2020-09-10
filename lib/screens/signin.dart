@@ -14,15 +14,67 @@ class _SignInState extends State<SignIn> {
           title: Text('Sign In'),
         ),
         body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              MyStyle().setLogo(),
-              MyStyle().showName('GastoGo'),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                MyStyle().setLogo(),
+                MyStyle().buildSizedBox(),
+                MyStyle().showName('GastoGo'),
+                MyStyle().buildSizedBox(),
+                userForm(),
+                MyStyle().buildSizedBox(),
+                passwordForm(),
+                loginButton(),
+                MyStyle().buildSizedBox(),
+              ],
+            ),
           ),
         ));
   }
+
+  Widget loginButton() => Container(
+      width: 150.0,
+      child: RaisedButton(
+        color: MyStyle().darkColor,
+        onPressed: () {},
+        child: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
+        ),
+      ));
+
+  // SizedBox buildSizedBox() => SizedBox();
+
+  Widget userForm() => Container(
+        width: 250.0,
+        child: TextField(
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.account_box, color: MyStyle().darkColor),
+            labelStyle: TextStyle(color: MyStyle().darkColor),
+            labelText: 'User :',
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: MyStyle().darkColor)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: MyStyle().primaryColor)),
+          ),
+        ),
+      );
+
+  Widget passwordForm() => Container(
+        width: 250.0,
+        child: TextField(
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.lock, color: MyStyle().darkColor),
+            labelStyle: TextStyle(color: MyStyle().darkColor),
+            labelText: 'Password :',
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: MyStyle().darkColor)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: MyStyle().primaryColor)),
+          ),
+        ),
+      );
 
   // Text showName() => Text('GastoGo');
 }

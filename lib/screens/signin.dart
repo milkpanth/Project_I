@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/unility/style.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -15,15 +16,13 @@ class _SignInState extends State<SignIn> {
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[setLogo()],
+            children: <Widget>[
+              MyStyle().setLogo(),
+              showName(),
+            ],
           ),
         ));
   }
 
-  Container setLogo() {
-    return Container(
-      width: 120.0,
-      child: Image.asset('images/logo.jpg'),
-    );
-  }
+  // Text showName() => Text('GastoGo');
 }

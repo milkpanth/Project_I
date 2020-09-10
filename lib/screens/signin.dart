@@ -13,21 +13,30 @@ class _SignInState extends State<SignIn> {
         appBar: AppBar(
           title: Text('Sign In'),
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                MyStyle().setLogo(),
-                MyStyle().buildSizedBox(),
-                MyStyle().showName('GastoGo'),
-                MyStyle().buildSizedBox(),
-                userForm(),
-                MyStyle().buildSizedBox(),
-                passwordForm(),
-                loginButton(),
-                MyStyle().buildSizedBox(),
-              ],
+        body: Container(
+          decoration: BoxDecoration(
+              //     gradient: RadialGradient(
+              //   colors: <Color>[Colors.white, MyStyle().primaryColor],
+              // center: Alignment(0, -0.3),
+              // //   radius: 1.0,
+              // )
+              ),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  MyStyle().setLogo(),
+                  MyStyle().buildSizedBox(),
+                  MyStyle().showName('GastoGo'),
+                  MyStyle().buildSizedBox(),
+                  userForm(),
+                  MyStyle().buildSizedBox(),
+                  passwordForm(),
+                  loginButton(),
+                  MyStyle().buildSizedBox(),
+                ],
+              ),
             ),
           ),
         ));
@@ -64,6 +73,7 @@ class _SignInState extends State<SignIn> {
   Widget passwordForm() => Container(
         width: 250.0,
         child: TextField(
+          obscureText: true,
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.lock, color: MyStyle().darkColor),
             labelStyle: TextStyle(color: MyStyle().darkColor),

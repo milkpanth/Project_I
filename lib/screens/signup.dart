@@ -7,6 +7,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  String chooseType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,9 @@ class _SignUpState extends State<SignUp> {
   }
 
   Row typeUser() => Row(
-        children: <Widget>[],
+        children: <Widget>[
+          Radio(value: 'User', groupValue: chooseType, onChanged: null)
+        ],
       );
 
   Widget nameForm() => Row(

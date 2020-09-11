@@ -20,10 +20,81 @@ class _SignUpState extends State<SignUp> {
           MyStyle().buildSizedBox(),
           appName(),
           MyStyle().buildSizedBox(),
+          nameForm(),
+          MyStyle().buildSizedBox(),
+          userForm(),
+          MyStyle().buildSizedBox(),
+          passwordForm(),
+          MyStyle().buildSizedBox(),
+          typeUser(),
         ],
       ),
     );
   }
+
+  Row typeUser() => Row(
+        children: <Widget>[],
+      );
+
+  Widget nameForm() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.face, color: MyStyle().textColor),
+                labelStyle: TextStyle(color: MyStyle().textColor),
+                labelText: 'Name :',
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().textColor)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().bgColor)),
+              ),
+            ),
+          ),
+        ],
+      );
+
+  Widget userForm() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.account_box, color: MyStyle().textColor),
+                labelStyle: TextStyle(color: MyStyle().textColor),
+                labelText: 'User :',
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().textColor)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().bgColor)),
+              ),
+            ),
+          ),
+        ],
+      );
+
+  Widget passwordForm() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.account_box, color: MyStyle().textColor),
+                labelStyle: TextStyle(color: MyStyle().textColor),
+                labelText: 'Password :',
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().textColor)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().bgColor)),
+              ),
+            ),
+          ),
+        ],
+      );
 
   Row appName() {
     return Row(

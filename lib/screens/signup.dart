@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/unility/style.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -11,6 +12,11 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sign up'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          MyStyle().setLogo(),
+        ],
       ),
     );
   }

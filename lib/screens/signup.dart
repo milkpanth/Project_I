@@ -29,10 +29,27 @@ class _SignUpState extends State<SignUp> {
           passwordForm(),
           MyStyle().buildSizedBox(),
           typeUser(),
+          // MyStyle().buildSizedBox(),
+          typeShop(),
+          // MyStyle().buildSizedBox(),
+          typeRider(),
+          MyStyle().buildSizedBox(),
+          registerButton(),
         ],
       ),
     );
   }
+
+  Widget registerButton() => Container(
+      width: 150.0,
+      child: RaisedButton(
+        color: MyStyle().textColor,
+        onPressed: () {},
+        child: Text(
+          'Register',
+          style: TextStyle(color: Colors.white),
+        ),
+      ));
 
   Widget typeUser() => Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +69,58 @@ class _SignUpState extends State<SignUp> {
                     }),
                 Text(
                   'User order',
+                  style: TextStyle(color: MyStyle().textColor),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+
+  Widget typeShop() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: Row(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Radio(
+                    value: 'Shop',
+                    groupValue: chooseType,
+                    onChanged: (value) {
+                      setState(() {
+                        chooseType = value;
+                      });
+                    }),
+                Text(
+                  'Own Shop',
+                  style: TextStyle(color: MyStyle().textColor),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+
+  Widget typeRider() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: Row(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Radio(
+                    value: 'Rider',
+                    groupValue: chooseType,
+                    onChanged: (value) {
+                      setState(() {
+                        chooseType = value;
+                      });
+                    }),
+                Text(
+                  'Rider',
                   style: TextStyle(color: MyStyle().textColor),
                 ),
               ],

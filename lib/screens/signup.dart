@@ -17,8 +17,20 @@ class _SignUpState extends State<SignUp> {
         padding: EdgeInsets.all(30.0),
         children: <Widget>[
           gtgLogo(),
+          MyStyle().buildSizedBox(),
+          appName(),
+          MyStyle().buildSizedBox(),
         ],
       ),
+    );
+  }
+
+  Row appName() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        MyStyle().showName('GastoGo'),
+      ],
     );
   }
 

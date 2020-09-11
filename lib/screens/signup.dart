@@ -34,9 +34,29 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Row typeUser() => Row(
-        children: <Widget>[
-          Radio(value: 'User', groupValue: chooseType, onChanged: null)
+  Widget typeUser() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: Row(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Radio(
+                    value: 'User',
+                    groupValue: chooseType,
+                    onChanged: (value) {
+                      setState(() {
+                        chooseType = value;
+                      });
+                    }),
+                Text(
+                  'User order',
+                  style: TextStyle(color: MyStyle().textColor),
+                ),
+              ],
+            ),
+          ),
         ],
       );
 

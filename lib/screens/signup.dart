@@ -14,10 +14,18 @@ class _SignUpState extends State<SignUp> {
         title: Text('Sign up'),
       ),
       body: ListView(
+        padding: EdgeInsets.all(30.0),
         children: <Widget>[
-          MyStyle().setLogo(),
+          gtgLogo(),
         ],
       ),
     );
   }
+
+  Widget gtgLogo() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MyStyle().setLogo(),
+        ],
+      );
 }

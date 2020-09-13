@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
 
 class SignUp extends StatefulWidget {
@@ -44,7 +45,23 @@ class _SignUpState extends State<SignUp> {
       width: 150.0,
       child: RaisedButton(
         color: MyStyle().textColor,
-        onPressed: () {},
+        onPressed: () {
+          print(
+              'name = $name, user = $user, password = $password, chooseTYpe = $chooseType');
+          if (name == null ||
+              name.isEmpty ||
+              user == null ||
+              user.isEmpty ||
+              password == null ||
+              password.isEmpty ||
+              chooseType == null ||
+              chooseType.isEmpty) {
+            print('Have Space');
+            normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
+          } else if (chooseType == null) {
+            normalDialog(context, 'โปรดเลือกประเภทของคุณ');
+          } else {}
+        },
         child: Text(
           'Register',
           style: TextStyle(color: Colors.white),

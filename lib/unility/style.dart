@@ -15,6 +15,12 @@ class MyStyle {
           color: Colors.blue[700],
           fontWeight: FontWeight.bold));
 
+  Text showText(String title) => Text(title,
+      style: TextStyle(
+          fontSize: 18.0,
+          color: Colors.blue[700],
+          fontWeight: FontWeight.bold));
+
   Container setLogo() {
     return Container(
       width: 120.0,

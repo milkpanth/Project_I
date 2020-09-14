@@ -29,6 +29,8 @@ class _SignUpState extends State<SignUp> {
           MyStyle().buildSizedBox(),
           passwordForm(),
           MyStyle().buildSizedBox(),
+          MyStyle().showText('ชนิดของสมาชิก : '),
+          MyStyle().buildSizedBox(),
           typeUser(),
           // MyStyle().buildSizedBox(),
           typeShop(),

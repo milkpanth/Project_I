@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
 
 class SignIn extends StatefulWidget {
@@ -49,7 +50,14 @@ class _SignInState extends State<SignIn> {
       width: 150.0,
       child: RaisedButton(
         color: MyStyle().textColor,
-        onPressed: () {},
+        onPressed: () {
+          if (user == null ||
+              user.isEmpty ||
+              password == null ||
+              password.isEmpty) {
+            normalDialog(context, 'Please fill username and password');
+          } else {}
+        },
         child: Text(
           'Login',
           style: TextStyle(color: Colors.white),
@@ -77,6 +85,7 @@ class _SignInState extends State<SignIn> {
   Widget passwordForm() => Container(
         width: 250.0,
         child: TextField(
+          onChanged: (value) => password = value.trim(),
           obscureText: true,
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.lock, color: MyStyle().textColor),

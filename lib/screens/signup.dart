@@ -10,7 +10,8 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String name, user, password;
-  int phonenumber;
+  String phonenumber;
+  //int phonenumber;
   //String chooseType;
 
   @override
@@ -64,11 +65,11 @@ class _SignUpState extends State<SignUp> {
               password == null ||
               password.isEmpty ||
               phonenumber == null ||
-              phonenumber.isNaN) {
+              phonenumber.isEmpty) {
             print('Have Space');
             normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
-            // } else if (chooseType == null) {
-            //   normalDialog(context, 'โปรดเลือกประเภทของคุณ');
+            // } else if (phonenumber == null) {
+            //   normalDialog(context, 'โปรดใส่เบอร์โทรศัพท์');
           } else {
             registerThread();
           }
@@ -85,6 +86,9 @@ class _SignUpState extends State<SignUp> {
     // path api อยู่ตรงไหน
     try {
       Response response = await Dio().get(url);
+      print('res = $response');
+      if (response.toString() == 'true') {
+      } else {}
     } catch (e) {}
   }
 
@@ -264,7 +268,7 @@ class _SignUpState extends State<SignUp> {
           Container(
             width: 250.0,
             child: TextField(
-              onChanged: (value) => user = value.trim(),
+              onChanged: (value) => phonenumber = value.trim(),
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.phone, color: MyStyle().textColor),
                 labelStyle: TextStyle(color: MyStyle().textColor),

@@ -6,6 +6,7 @@ import 'package:gastogo/model/user_model.dart';
 import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -92,7 +93,9 @@ class _SignInState extends State<SignIn> {
     } catch (e) {}
   }
 
-  void routeToService(Widget myWidget) {
+  Future<Null> routeToService(Widget myWidget) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
     MaterialPageRoute route = MaterialPageRoute(builder: (context) => myWidget);
     Navigator.pushAndRemoveUntil(context, route, (route) => false);
   }

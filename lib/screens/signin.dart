@@ -7,6 +7,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  //Field
+  String user, password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +61,7 @@ class _SignInState extends State<SignIn> {
   Widget userForm() => Container(
         width: 250.0,
         child: TextField(
+          onChanged: (value) => user = value.trim(),
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.account_box, color: MyStyle().textColor),
             labelStyle: TextStyle(color: MyStyle().textColor),

@@ -71,7 +71,8 @@ class _SignUpState extends State<SignUp> {
             // } else if (phonenumber == null) {
             //   normalDialog(context, 'โปรดใส่เบอร์โทรศัพท์');
           } else {
-            registerThread();
+            checkUser();
+            //registerThread();
           }
         },
         child: Text(
@@ -80,15 +81,21 @@ class _SignUpState extends State<SignUp> {
         ),
       ));
 
+  Future<Null> checkUser() async {}
+
   Future<Null> registerThread() async {
     String url =
         'http://192.168.64.2/GastoGo/addUser.php?isAdd=true&Name=$name&User=$user&Password=$password&Phonenumber=$phonenumber';
     // path api อยู่ตรงไหน
+
     try {
       Response response = await Dio().get(url);
       print('res = $response');
       if (response.toString() == 'true') {
-      } else {}
+        Navigator.pop(context);
+      } else {
+        normalDialog(context, 'Can not register');
+      }
     } catch (e) {}
   }
 

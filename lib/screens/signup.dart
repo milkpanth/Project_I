@@ -81,7 +81,13 @@ class _SignUpState extends State<SignUp> {
         ),
       ));
 
-  Future<Null> checkUser() async {}
+  Future<Null> checkUser() async {
+    String url =
+        'http://192.168.64.2/GastoGo/getUserWhereUser.php?isAdd=true&User=$user';
+    try {
+      Response response = await Dio().get(url);
+    } catch (e) {}
+  }
 
   Future<Null> registerThread() async {
     String url =

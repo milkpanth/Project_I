@@ -228,6 +228,7 @@ class _SignUpState extends State<SignUp> {
           Container(
             width: 250.0,
             child: TextField(
+              obscureText: true,
               onChanged: (value) => password = value.trim(),
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.account_box, color: MyStyle().textColor),

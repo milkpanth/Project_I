@@ -10,7 +10,7 @@ class _MainUserState extends State<MainUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Main USer'),
+        title: Text('Main User'),
       ),
     );
   }

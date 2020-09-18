@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
@@ -82,7 +83,9 @@ class _SignUpState extends State<SignUp> {
     String url =
         'http://192.168.64.2/GastoGo/addUser.php?isAdd=true&Name=$name&User=$user&Password=$password&Phonenumber=$phonenumber';
     // path api อยู่ตรงไหน
-    try {} catch (e) {}
+    try {
+      Response response = await Dio().get(url);
+    } catch (e) {}
   }
 
   // Widget registerButton() => Container(

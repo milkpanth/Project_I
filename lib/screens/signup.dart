@@ -9,6 +9,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String name, user, password;
+  String phonenumber;
   //String chooseType;
 
   @override
@@ -29,6 +30,8 @@ class _SignUpState extends State<SignUp> {
           userForm(),
           MyStyle().buildSizedBox(),
           passwordForm(),
+          MyStyle().buildSizedBox(),
+          phoneForm(),
           MyStyle().buildSizedBox(),
           // MyStyle().showText('ชนิดของสมาชิก : '),
           // MyStyle().buildSizedBox(),
@@ -51,13 +54,16 @@ class _SignUpState extends State<SignUp> {
         onPressed: () {
           // print(
           //     'name = $name, user = $user, password = $password, chooseType = $chooseType');
-          print('name = $name, user = $user, password = $password');
+          print(
+              'name = $name, user = $user, password = $password, phonenumber = $phonenumber');
           if (name == null ||
               name.isEmpty ||
               user == null ||
               user.isEmpty ||
               password == null ||
-              password.isEmpty) {
+              password.isEmpty ||
+              phonenumber == null ||
+              phonenumber.isEmpty) {
             print('Have Space');
             normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
             // } else if (chooseType == null) {
@@ -234,6 +240,27 @@ class _SignUpState extends State<SignUp> {
                 prefixIcon: Icon(Icons.account_box, color: MyStyle().textColor),
                 labelStyle: TextStyle(color: MyStyle().textColor),
                 labelText: 'Password :',
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().textColor)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyStyle().bgColor)),
+              ),
+            ),
+          ),
+        ],
+      );
+
+  Widget phoneForm() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 250.0,
+            child: TextField(
+              onChanged: (value) => user = value.trim(),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.phone, color: MyStyle().textColor),
+                labelStyle: TextStyle(color: MyStyle().textColor),
+                labelText: 'Phone number : +66 ',
                 enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: MyStyle().textColor)),
                 focusedBorder: OutlineInputBorder(

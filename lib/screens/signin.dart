@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gastogo/model/user_model.dart';
+import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
 
@@ -83,11 +84,17 @@ class _SignInState extends State<SignIn> {
       for (var map in result) {
         UserModel userModel = UserModel.fromJson(map);
         if (password == userModel.password) {
+          routeToService(MainUser());
         } else {
           normalDialog(context, 'You are password is not correct');
         }
       }
     } catch (e) {}
+  }
+
+  void routeToService(Widget myWidget) {
+    MaterialPageRoute route = MaterialPageRoute(builder: (context) => myWidget);
+    Navigator.pushAndRemoveUntil(context, route, (route) => false);
   }
 
   Widget userForm() => Container(

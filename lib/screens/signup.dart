@@ -9,7 +9,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   String name, user, password;
-  String phonenumber;
+  int phonenumber;
   //String chooseType;
 
   @override
@@ -63,7 +63,7 @@ class _SignUpState extends State<SignUp> {
               password == null ||
               password.isEmpty ||
               phonenumber == null ||
-              phonenumber.isEmpty) {
+              phonenumber.isNaN) {
             print('Have Space');
             normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
             // } else if (chooseType == null) {
@@ -78,7 +78,12 @@ class _SignUpState extends State<SignUp> {
         ),
       ));
 
-  Future<Null> registerThread() async {}
+  Future<Null> registerThread() async {
+    String url =
+        'http://192.168.64.2/GastoGo/addUser.php?isAdd=true&Name=$name&User=$user&Password=$password&Phonenumber=$phonenumber';
+    // path api อยู่ตรงไหน
+    try {} catch (e) {}
+  }
 
   // Widget registerButton() => Container(
   //     width: 150.0,

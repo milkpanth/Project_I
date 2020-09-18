@@ -86,6 +86,11 @@ class _SignUpState extends State<SignUp> {
         'http://192.168.64.2/GastoGo/getUserWhereUser.php?isAdd=true&User=$user';
     try {
       Response response = await Dio().get(url);
+      if (response.toString() == 'null') {
+        registerThread();
+      } else {
+        normalDialog(context, 'มีคนใช้ $user นี้แล้ว');
+      }
     } catch (e) {}
   }
 

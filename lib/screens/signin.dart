@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
@@ -68,7 +69,14 @@ class _SignInState extends State<SignIn> {
 
   // SizedBox buildSizedBox() => SizedBox();
 
-  Future<Null> checkAuthen() async {}
+  Future<Null> checkAuthen() async {
+    String url =
+        'http://192.168.64.2/GastoGo/getUserWhereUser.php?isAdd=true&User=$user';
+    try {
+      Response response = await Dio().get(url);
+      print('res = $response');
+    } catch (e) {}
+  }
 
   Widget userForm() => Container(
         width: 250.0,

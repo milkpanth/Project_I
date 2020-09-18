@@ -8,7 +8,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String chooseType, name, user, password;
+  String name, user, password;
+  //String chooseType;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +30,14 @@ class _SignUpState extends State<SignUp> {
           MyStyle().buildSizedBox(),
           passwordForm(),
           MyStyle().buildSizedBox(),
-          MyStyle().showText('ชนิดของสมาชิก : '),
-          MyStyle().buildSizedBox(),
-          typeUser(),
+          // MyStyle().showText('ชนิดของสมาชิก : '),
           // MyStyle().buildSizedBox(),
-          typeShop(),
+          // typeUser(),
+          // // MyStyle().buildSizedBox(),
+          // typeShop(),
+          // // MyStyle().buildSizedBox(),
+          // typeRider(),
           // MyStyle().buildSizedBox(),
-          typeRider(),
-          MyStyle().buildSizedBox(),
           registerButton(),
         ],
       ),
@@ -48,21 +49,22 @@ class _SignUpState extends State<SignUp> {
       child: RaisedButton(
         color: MyStyle().textColor,
         onPressed: () {
-          print(
-              'name = $name, user = $user, password = $password, chooseTYpe = $chooseType');
+          // print(
+          //     'name = $name, user = $user, password = $password, chooseType = $chooseType');
+          print('name = $name, user = $user, password = $password');
           if (name == null ||
               name.isEmpty ||
               user == null ||
               user.isEmpty ||
               password == null ||
-              password.isEmpty ||
-              chooseType == null ||
-              chooseType.isEmpty) {
+              password.isEmpty) {
             print('Have Space');
             normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
-          } else if (chooseType == null) {
-            normalDialog(context, 'โปรดเลือกประเภทของคุณ');
-          } else {}
+            // } else if (chooseType == null) {
+            //   normalDialog(context, 'โปรดเลือกประเภทของคุณ');
+          } else {
+            registerThread();
+          }
         },
         child: Text(
           'Register',
@@ -70,83 +72,112 @@ class _SignUpState extends State<SignUp> {
         ),
       ));
 
-  Widget typeUser() => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 250.0,
-            child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                    value: 'User',
-                    groupValue: chooseType,
-                    onChanged: (value) {
-                      setState(() {
-                        chooseType = value;
-                      });
-                    }),
-                Text(
-                  'User order',
-                  style: TextStyle(color: MyStyle().textColor),
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
+  Future<Null> registerThread() async {}
 
-  Widget typeShop() => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 250.0,
-            child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                    value: 'Shop',
-                    groupValue: chooseType,
-                    onChanged: (value) {
-                      setState(() {
-                        chooseType = value;
-                      });
-                    }),
-                Text(
-                  'Own Shop',
-                  style: TextStyle(color: MyStyle().textColor),
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
+  // Widget registerButton() => Container(
+  //     width: 150.0,
+  //     child: RaisedButton(
+  //       color: MyStyle().textColor,
+  //       onPressed: () {
+  //         print(
+  //             'name = $name, user = $user, password = $password, chooseType = $chooseType');
+  //         if (name == null ||
+  //             name.isEmpty ||
+  //             user == null ||
+  //             user.isEmpty ||
+  //             password == null ||
+  //             password.isEmpty ||
+  //             chooseType == null ||
+  //             chooseType.isEmpty) {
+  //           print('Have Space');
+  //           normalDialog(context, 'กรุณากรอกข้อมูลให้ครบ');
+  //         } else if (chooseType == null) {
+  //           normalDialog(context, 'โปรดเลือกประเภทของคุณ');
+  //         } else {}
+  //       },
+  //       child: Text(
+  //         'Register',
+  //         style: TextStyle(color: Colors.white),
+  //       ),
+  //     ));
 
-  Widget typeRider() => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 250.0,
-            child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                    value: 'Rider',
-                    groupValue: chooseType,
-                    onChanged: (value) {
-                      setState(() {
-                        chooseType = value;
-                      });
-                    }),
-                Text(
-                  'Rider',
-                  style: TextStyle(color: MyStyle().textColor),
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
+  // Widget typeUser() => Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Container(
+  //           width: 250.0,
+  //           child: Row(
+  //             // crossAxisAlignment: CrossAxisAlignment.center,
+  //             children: <Widget>[
+  //               Radio(
+  //                   value: 'User',
+  //                   groupValue: chooseType,
+  //                   onChanged: (value) {
+  //                     setState(() {
+  //                       chooseType = value;
+  //                     });
+  //                   }),
+  //               Text(
+  //                 'User order',
+  //                 style: TextStyle(color: MyStyle().textColor),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ],
+  //     );
+
+  // Widget typeShop() => Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Container(
+  //           width: 250.0,
+  //           child: Row(
+  //             // crossAxisAlignment: CrossAxisAlignment.center,
+  //             children: <Widget>[
+  //               Radio(
+  //                   value: 'Shop',
+  //                   groupValue: chooseType,
+  //                   onChanged: (value) {
+  //                     setState(() {
+  //                       chooseType = value;
+  //                     });
+  //                   }),
+  //               Text(
+  //                 'Own Shop',
+  //                 style: TextStyle(color: MyStyle().textColor),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ],
+  //     );
+
+  // Widget typeRider() => Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Container(
+  //           width: 250.0,
+  //           child: Row(
+  //             // crossAxisAlignment: CrossAxisAlignment.center,
+  //             children: <Widget>[
+  //               Radio(
+  //                   value: 'Rider',
+  //                   groupValue: chooseType,
+  //                   onChanged: (value) {
+  //                     setState(() {
+  //                       chooseType = value;
+  //                     });
+  //                   }),
+  //               Text(
+  //                 'Rider',
+  //                 style: TextStyle(color: MyStyle().textColor),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ],
+  //     );
 
   Widget nameForm() => Row(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
@@ -75,6 +77,8 @@ class _SignInState extends State<SignIn> {
     try {
       Response response = await Dio().get(url);
       print('res = $response');
+      var result = json.decode(response.data);
+      print('result = $result');
     } catch (e) {}
   }
 

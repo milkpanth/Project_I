@@ -56,7 +56,9 @@ class _SignInState extends State<SignIn> {
               password == null ||
               password.isEmpty) {
             normalDialog(context, 'Please fill username and password');
-          } else {}
+          } else {
+            checkAuthen();
+          }
         },
         child: Text(
           'Login',
@@ -65,6 +67,8 @@ class _SignInState extends State<SignIn> {
       ));
 
   // SizedBox buildSizedBox() => SizedBox();
+
+  Future<Null> checkAuthen() async {}
 
   Widget userForm() => Container(
         width: 250.0,

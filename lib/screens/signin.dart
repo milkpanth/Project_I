@@ -85,7 +85,7 @@ class _SignInState extends State<SignIn> {
       for (var map in result) {
         UserModel userModel = UserModel.fromJson(map);
         if (password == userModel.password) {
-          routeToService(MainUser());
+          routeToService(MainUser(), userModel);
         } else {
           normalDialog(context, 'You are password is not correct');
         }
@@ -93,8 +93,12 @@ class _SignInState extends State<SignIn> {
     } catch (e) {}
   }
 
-  Future<Null> routeToService(Widget myWidget) async {
+  Future<Null> routeToService(Widget myWidget, UserModel userModel) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString('id', userModel.id);
+    preferences.setString('name', userModel.name);
+    //preferences.setString('passworf', userModel.password);
+    //preferences.setString('phonenumber', userModel.phonenumber);
 
     MaterialPageRoute route = MaterialPageRoute(builder: (context) => myWidget);
     Navigator.pushAndRemoveUntil(context, route, (route) => false);

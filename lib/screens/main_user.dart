@@ -25,11 +25,11 @@ class _MainUserState extends State<MainUser> {
     });
   }
 
-  Future<Null> signOutProcess() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.clear();
-    exit(0);
-  }
+  // Future<Null> signOutProcess() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   preferences.clear();
+  //   exit(0);
+  // }
 
   @override
   Widget build(BuildContext context) {

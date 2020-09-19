@@ -3,6 +3,7 @@ import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/screens/signin.dart';
 import 'package:gastogo/screens/signup.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
+import 'package:gastogo/unility/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
@@ -86,6 +87,12 @@ class _HomeState extends State<Home> {
 
   UserAccountsDrawerHeader buildDrawerHead() {
     return UserAccountsDrawerHeader(
-        accountName: Text('Guest'), accountEmail: Text('Please Login'));
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/bg.jpg'), fit: BoxFit.cover),
+        ),
+        currentAccountPicture: MyStyle().setLogo(),
+        accountName: Text('Guest'),
+        accountEmail: Text('Please Login'));
   }
 }

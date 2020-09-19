@@ -53,6 +53,7 @@ class _MainShopState extends State<MainShop> {
 
   UserAccountsDrawerHeader showHeader() {
     return UserAccountsDrawerHeader(
+        decoration: MyStyle().myBoxDecoration('bg.jpg'),
         currentAccountPicture: MyStyle().setLogo(),
         accountName: Text('Name Shop'),
         accountEmail: Text('login'));

@@ -38,7 +38,7 @@ class _MainUserState extends State<MainUser> {
         title: Text(nameUser == null ? 'Main User' : '$nameUser login'),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.logout),
+              icon: Icon(Icons.exit_to_app),
               onPressed: () => signOutProcess(context)),
         ],
       ),

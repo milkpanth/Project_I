@@ -45,7 +45,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
       drawer: buildDrawer(),
     );
   }
@@ -62,7 +64,10 @@ class _HomeState extends State<Home> {
 
   ListTile signInMenu() {
     return ListTile(
-      leading: Icon(Icons.android),
+      leading: Icon(
+        Icons.account_box_outlined,
+        size: 35.0,
+      ),
       title: Text('Sign in'),
       onTap: () {
         Navigator.pop(context);
@@ -75,7 +80,7 @@ class _HomeState extends State<Home> {
 
   ListTile signUpMenu() {
     return ListTile(
-      leading: Icon(Icons.android),
+      leading: Icon(Icons.person_add_alt_1, size: 30.0),
       title: Text('Sign Up'),
       onTap: () {
         Navigator.pop(context);
@@ -95,7 +100,7 @@ class _HomeState extends State<Home> {
         // ),
         currentAccountPicture: MyStyle().setLogo(),
         accountName:
-            Text('Guest', style: TextStyle(color: MyStyle().normalText)),
+            Text('Welcome', style: TextStyle(color: MyStyle().normalText)),
         accountEmail: Text('Please Login',
             style: TextStyle(color: MyStyle().normalText)));
   }

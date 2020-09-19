@@ -47,8 +47,15 @@ class _MainShopState extends State<MainShop> {
         child: ListView(
           children: <Widget>[
             showHeader(),
+            homeMenu(),
           ],
         ),
+      );
+
+  ListTile homeMenu() => ListTile(
+        leading: Icon(Icons.home),
+        title: Text('Order'),
+        subtitle: Text('Order waiting to make'),
       );
 
   UserAccountsDrawerHeader showHeader() {

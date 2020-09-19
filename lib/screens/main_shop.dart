@@ -47,15 +47,32 @@ class _MainShopState extends State<MainShop> {
         child: ListView(
           children: <Widget>[
             showHeader(),
-            homeMenu(),
+            orderMenu(),
+            gasMenu(),
+            signoutMenu(),
           ],
         ),
       );
 
-  ListTile homeMenu() => ListTile(
+  ListTile orderMenu() => ListTile(
         leading: Icon(Icons.home),
         title: Text('Order'),
         subtitle: Text('Order waiting to make'),
+        onTap: () => Navigator.pop(context),
+      );
+
+  ListTile gasMenu() => ListTile(
+        leading: Icon(Icons.home),
+        title: Text('Gas Type'),
+        subtitle: Text('รายละเอียดแก๊ส ยี่ ห้อ ขนาด'),
+        onTap: () => Navigator.pop(context),
+      );
+
+  ListTile signoutMenu() => ListTile(
+        leading: Icon(Icons.home),
+        title: Text('signout'),
+        subtitle: Text('back to home page'),
+        onTap: () => signOutProcess(context),
       );
 
   UserAccountsDrawerHeader showHeader() {

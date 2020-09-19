@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/signout_process.dart';
 import 'package:gastogo/unility/style.dart';
+import 'package:gastogo/widget/listgas_shop.dart';
+import 'package:gastogo/widget/order_listshop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainShop extends StatefulWidget {
@@ -10,21 +12,8 @@ class MainShop extends StatefulWidget {
 }
 
 class _MainShopState extends State<MainShop> {
-  // String nameShop;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // findShop();
-  }
-
-  // Future<Null> findShop() async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     nameShop = preferences.getString('Name');
-  //   });
-  // }
+//Field
+  Widget currentWidget = OrderListShop();
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +29,7 @@ class _MainShopState extends State<MainShop> {
         ],
       ),
       drawer: buildDrawer(),
+      body: currentWidget,
     );
   }
 
@@ -58,14 +48,24 @@ class _MainShopState extends State<MainShop> {
         leading: Icon(Icons.home),
         title: Text('Order'),
         subtitle: Text('Order waiting to make'),
-        onTap: () => Navigator.pop(context),
+        onTap: () {
+          setState(() {
+            currentWidget = OrderListShop();
+          });
+          Navigator.pop(context);
+        },
       );
 
   ListTile gasMenu() => ListTile(
         leading: Icon(Icons.home),
         title: Text('Gas Type'),
         subtitle: Text('รายละเอียดแก๊ส ยี่ ห้อ ขนาด'),
-        onTap: () => Navigator.pop(context),
+        onTap: () {
+          setState(() {
+            currentWidget = ListGasType();
+          });
+          Navigator.pop(context);
+        },
       );
 
   ListTile signoutMenu() => ListTile(

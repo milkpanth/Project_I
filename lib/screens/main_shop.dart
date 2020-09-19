@@ -1,6 +1,7 @@
 //import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/signout_process.dart';
+import 'package:gastogo/unility/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainShop extends StatefulWidget {
@@ -32,12 +33,28 @@ class _MainShopState extends State<MainShop> {
         title: Text('Shop'
             // nameShop == null ? 'Main Shop' : '$nameShop login'
             ),
-        // actions: <Widget>[
-        //   IconButton(
-        //       icon: Icon(Icons.logout),
-        //       onPressed: () => signOutProcess(context)),
-        // ],
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () => signOutProcess(context)),
+        ],
       ),
+      drawer: buildDrawer(),
     );
+  }
+
+  Drawer buildDrawer() => Drawer(
+        child: ListView(
+          children: <Widget>[
+            showHeader(),
+          ],
+        ),
+      );
+
+  UserAccountsDrawerHeader showHeader() {
+    return UserAccountsDrawerHeader(
+        currentAccountPicture: MyStyle().setLogo(),
+        accountName: Text('Name Shop'),
+        accountEmail: Text('login'));
   }
 }

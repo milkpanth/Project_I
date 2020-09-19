@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
   }
 
   Future<Null> checkPreference() async {
+    //checkuser
     try {
       SharedPreferences preferences = await SharedPreferences.getInstance();
       String showName = preferences

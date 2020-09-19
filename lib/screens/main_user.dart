@@ -23,11 +23,19 @@ class _MainUserState extends State<MainUser> {
     });
   }
 
+  Future<Null> signOutProcess() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(nameUser == null ? 'Main User' : '$nameUser login'),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.logout), onPressed: () => signOutProcess()),
+        ],
       ),
     );
   }

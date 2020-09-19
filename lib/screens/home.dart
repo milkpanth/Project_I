@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/screens/signin.dart';
 import 'package:gastogo/screens/signup.dart';
+import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
@@ -21,8 +23,21 @@ class _HomeState extends State<Home> {
       SharedPreferences preferences = await SharedPreferences.getInstance();
       String showName = preferences
           .getString('Name'); //showว่าเปนผู้คนใช้คนไหนหรือเจ้าของร้าน
-      if (showName != null && showName.isEmpty) {}
+      if (showName != null && showName.isEmpty) {
+        if (showName == 'User') {
+          routeToService(MainUser());
+        } else {
+          normalDialog(context, 'Error User not found');
+        }
+      }
     } catch (e) {}
+  }
+
+  void routeToService(Widget myWidget) {
+    MaterialPageRoute route = MaterialPageRoute(
+      builder: (context) => myWidget,
+    );
+    Navigator.pushAndRemoveUntil(context, route, (route) => false);
   }
 
   @override

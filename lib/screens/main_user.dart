@@ -1,6 +1,6 @@
-import 'dart:io';
-
+//import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:gastogo/unility/signout_process.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainUser extends StatefulWidget {
@@ -38,7 +38,8 @@ class _MainUserState extends State<MainUser> {
         title: Text(nameUser == null ? 'Main User' : '$nameUser login'),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.logout), onPressed: () => signOutProcess()),
+              icon: Icon(Icons.logout),
+              onPressed: () => signOutProcess(context)),
         ],
       ),
     );

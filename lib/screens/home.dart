@@ -87,10 +87,11 @@ class _HomeState extends State<Home> {
 
   UserAccountsDrawerHeader buildDrawerHead() {
     return UserAccountsDrawerHeader(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('images/bg.jpg'), fit: BoxFit.cover),
-        ),
+        decoration: MyStyle().myBoxDecoration('bg.jpg'),
+        // BoxDecoration(
+        //   image: DecorationImage(
+        //       image: AssetImage('images/bg.jpg'), fit: BoxFit.cover),
+        // ),
         currentAccountPicture: MyStyle().setLogo(),
         accountName: Text('Guest'),
         accountEmail: Text('Please Login'));

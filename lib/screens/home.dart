@@ -93,7 +93,9 @@ class _HomeState extends State<Home> {
         //       image: AssetImage('images/bg.jpg'), fit: BoxFit.cover),
         // ),
         currentAccountPicture: MyStyle().setLogo(),
-        accountName: Text('Guest'),
-        accountEmail: Text('Please Login'));
+        accountName:
+            Text('Guest', style: TextStyle(color: MyStyle().normalText)),
+        accountEmail: Text('Please Login',
+            style: TextStyle(color: MyStyle().normalText)));
   }
 }

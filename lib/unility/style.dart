@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MyStyle {
   Color textColor = Colors.blue[700];
   Color bgColor = Colors.white;
+  Color normalText = Colors.black;
 
   SizedBox buildSizedBox() => SizedBox(
         width: 8.0,

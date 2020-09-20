@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/screens/signin.dart';
 import 'package:gastogo/screens/signup.dart';
-import 'package:gastogo/unility/body.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:gastogo/unility/body.dart';
 
 class Home extends StatefulWidget {
   @override

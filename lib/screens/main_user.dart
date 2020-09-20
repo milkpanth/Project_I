@@ -1,6 +1,7 @@
 //import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gastogo/unility/signout_process.dart';
+import 'package:gastogo/unility/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainUser extends StatefulWidget {
@@ -42,6 +43,25 @@ class _MainUserState extends State<MainUser> {
               onPressed: () => signOutProcess(context)),
         ],
       ),
+      drawer: showDrawer(),
+    );
+  }
+
+  Drawer showDrawer() => Drawer(
+        child: ListView(
+          children: <Widget>[
+            showHeader(),
+          ],
+        ),
+      );
+
+  UserAccountsDrawerHeader showHeader() {
+    return UserAccountsDrawerHeader(
+      accountName: Text(
+        'Name Login',
+        style: TextStyle(color: MyStyle().textColor),
+      ),
+      accountEmail: Text('Login', style: TextStyle(color: MyStyle().textColor)),
     );
   }
 }

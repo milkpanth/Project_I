@@ -4,6 +4,7 @@ class MyStyle {
   Color textColor = Colors.blue[700];
   Color bgColor = Colors.white;
   Color normalText = Colors.black;
+  Color bgshop = Colors.green[300];
 
   SizedBox buildSizedBox() => SizedBox(
         width: 8.0,

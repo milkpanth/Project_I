@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gastogo/screens/main_user.dart';
 import 'package:gastogo/screens/signin.dart';
 import 'package:gastogo/screens/signup.dart';
+import 'package:gastogo/unility/body.dart';
 import 'package:gastogo/unility/normal_dialog.dart';
 import 'package:gastogo/unility/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:gastogo/unility/body.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -49,7 +51,26 @@ class _HomeState extends State<Home> {
         title: Text('Home'),
       ),
       drawer: buildDrawer(),
-      // body: ,
+      // body: BodyHome(),
+      //===============================
+      // body: Container(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.start,
+      //     //mainAxisAlignment: MainAxisAlignment.center,
+      //     //crossAxisAlignment: CrossAxisAlignment.center,
+      //     children: <Widget>[
+      //       Container(
+      //         //padding: EdgeInsets.all(50),
+      //         width: 150.0,
+      //         height: 80.0,
+      //         child: Image.network(
+      //             'https://scontent.fbkk5-5.fna.fbcdn.net/v/t1.0-9/105353239_110970653993849_5496117879721965726_o.jpg?_nc_cat=100&_nc_sid=09cbfe&_nc_ohc=ZXZH8At8zdYAX8k2aQB&_nc_ht=scontent.fbkk5-5.fna&oh=745e6216ddbe8454c4eba58d730150ff&oe=5F8C1FD8'),
+      //       ),
+      //       Text('สหกรณ์ 3 แก๊ส'),
+      //     ],
+      //   ),
+      // ),
+      //===============================
     );
   }
 

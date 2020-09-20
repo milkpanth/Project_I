@@ -43,11 +43,11 @@ class _MainUserState extends State<MainUser> {
               onPressed: () => signOutProcess(context)),
         ],
       ),
-      drawer: showDrawer(),
+      drawer: buildDrawer(),
     );
   }
 
-  Drawer showDrawer() => Drawer(
+  Drawer buildDrawer() => Drawer(
         child: ListView(
           children: <Widget>[
             showHeader(),

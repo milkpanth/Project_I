@@ -9,6 +9,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  String chooseType;
   String name, user, password;
   String phonenumber;
   //int phonenumber;
@@ -48,6 +49,18 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
+
+  Row userRadio() => Row(
+        children: <Widget>[
+          Radio(
+            value: 'User',
+            groupValue: chooseType,
+            onChanged: (value) {
+              setState(() {});
+            },
+          )
+        ],
+      );
 
   Widget registerButton() => Container(
       width: 150.0,

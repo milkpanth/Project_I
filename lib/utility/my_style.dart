@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyStyle {
-  Text showName(String title) => Text(title);
+  Text showName(String title) => Text(
+        title,
+        style: TextStyle(
+          fontSize: 24.0,
+          color: Colors.blue[800],
+          fontWeight: FontWeight.bold,
+        ),
+      );
 
   Container showLogo() {
     return Container(

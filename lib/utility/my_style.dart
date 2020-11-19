@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 class MyStyle {
   Color textColor = Colors.blue[800];
   Color primaryColor = Colors.green;
+  Color buttonColor = Colors.blue[300];
+  Color darktextColor = Colors.black;
+  Color lighttextColor = Colors.white;
+
+  SizedBox buildSizedBox() => SizedBox(
+        width: 8.0,
+        height: 16.0,
+      );
 
   Text showName(String title) => Text(
         title,

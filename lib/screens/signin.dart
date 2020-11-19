@@ -11,19 +11,48 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Sign in')),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            MyStyle().showLogo(),
-            MyStyle().showName('GastoGo'),
-            userForm(),
-            passwordForm(),
-          ],
+      body: Container(
+        //decoration: BoxDecoration(
+        //gradient: RadialGradient(
+        // colors: <Color>[Colors.white, MyStyle().primaryColor],
+        // ),
+        //),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                MyStyle().showLogo(),
+                MyStyle().buildSizedBox(),
+                MyStyle().showName('GastoGo'),
+                MyStyle().buildSizedBox(),
+                userForm(),
+                MyStyle().buildSizedBox(),
+                //buildSizedBox(),
+                passwordForm(),
+                MyStyle().buildSizedBox(),
+                loginButton()
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
+
+  Widget loginButton() => Container(
+        width: 250.0,
+        child: RaisedButton(
+          color: MyStyle().buttonColor,
+          onPressed: () {},
+          child: Text(
+            'Log In',
+            style: TextStyle(color: MyStyle().lighttextColor),
+          ),
+        ),
+      );
+
+  // SizedBox buildSizedBox() => SizedBox();
 
   Widget userForm() => Container(
       width: 250.0,
@@ -45,6 +74,7 @@ class _SignInState extends State<SignIn> {
   Widget passwordForm() => Container(
       width: 250.0,
       child: TextField(
+        obscureText: true,
         decoration: InputDecoration(
           prefixIcon: Icon(
             Icons.lock,

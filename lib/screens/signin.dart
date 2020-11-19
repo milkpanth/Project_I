@@ -16,13 +16,46 @@ class _SignInState extends State<SignIn> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             MyStyle().showLogo(),
-            //showName(),
             MyStyle().showName('GastoGo'),
+            userForm(),
+            passwordForm(),
           ],
         ),
       ),
     );
   }
 
-  // Text showName() => Text('GastoGo');
+  Widget userForm() => Container(
+      width: 250.0,
+      child: TextField(
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.account_box,
+            color: MyStyle().textColor,
+          ),
+          labelStyle: TextStyle(color: MyStyle().textColor),
+          labelText: 'User : ',
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: MyStyle().textColor)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: MyStyle().primaryColor)),
+        ),
+      ));
+
+  Widget passwordForm() => Container(
+      width: 250.0,
+      child: TextField(
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.lock,
+            color: MyStyle().textColor,
+          ),
+          labelStyle: TextStyle(color: MyStyle().textColor),
+          labelText: 'Password : ',
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: MyStyle().textColor)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: MyStyle().primaryColor)),
+        ),
+      ));
 }

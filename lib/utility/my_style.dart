@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyStyle {
+  Color textColor = Colors.blue[800];
+  Color primaryColor = Colors.green;
+
   Text showName(String title) => Text(
         title,
         style: TextStyle(
